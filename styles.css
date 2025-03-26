@@ -1,0 +1,114 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  background-image: url("./img/bg.jpg"); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #e0e0e0;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: -1;
+}
+
+
+img {
+  width: 150px;
+  margin-bottom: 2.5rem;
+}
+
+main {
+  width: 700px;
+  background: rgba(10, 10, 10, 0.95);
+  border-radius: 1.5rem;
+  padding: 3rem;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.377);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+label {
+  font-size: 1rem;
+  color: #b2b8de;
+  text-transform: uppercase;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 1.2rem;
+  border: none;
+  border-radius: 0.75rem;
+  background: rgba(20, 20, 20, 0.9);
+  color: #e0e0e0;
+  font-size: 1.1rem;
+}
+
+select {
+  appearance: none;
+  background: url("./img/chevron-down.svg") no-repeat right 1rem center;
+  color: #e0e0e0;
+}
+
+select option {
+  background: #222;
+  color: #e0e0e0;
+}
+
+button {
+  width: 100%;
+  padding: 1.2rem;
+  background: linear-gradient(135deg, #222, #111);
+  border: none;
+  border-radius: 0.75rem;
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: linear-gradient(135deg, #333, #222);
+  transform: scale(1.05);
+}
+
+footer {
+  display: none;
+  background: rgba(20, 20, 20, 0.95);
+  padding: 2.5rem;
+  margin-top: 1.5rem;
+  text-align: center;
+  border-radius: 0.75rem;
+}
+
+.show-result {
+  display: block;
+}
