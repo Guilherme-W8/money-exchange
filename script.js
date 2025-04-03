@@ -5,6 +5,9 @@ const GPB = 6.08;
 const form = document.querySelector("form");
 const amount = document.getElementById("amount");
 const currency = document.getElementById("currency");
+const footer = document.querySelector("main footer");
+const description = document.getElementById("description");
+const result = document.getElementById("result");
 
 amount.addEventListener("input", () => {
     const hasCharactersRegex = /\D+/g;
@@ -28,6 +31,28 @@ form.onsubmit = (event) => {
     }
 }
 
+function formatCurrencyBRL(value){
+    return Number(value).toLocaleString("pt-BR", {
+        style: "currency",
+        currency: "BRL"
+    });
+}
+
 function convertCurrency(amount, price, symbol){
-    console.log(amount, price, symbol);
+    try {
+        let total = price * amount;
+
+        if(isNaN(total)){
+            alert("Input must be a number");
+        }
+
+        description.textContent = `${symbol} 1,00 = ${formatCurrencyBRL(price)}`;
+        result.textContent = formatCurrencyBRL(total);
+
+        footer.classList.add("show-result");
+    } catch (error) {
+        console.log(error);
+        footer.classList.remove("show-result");
+        alert("Could not convert. Please try again later.");
+    }
 }
